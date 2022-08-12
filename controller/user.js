@@ -1,4 +1,4 @@
-import pool, { executeQuery } from "../../config/db";
+import { executeQuery } from "../config/db";
 
 const addUser = async (req, res) => {
   await executeQuery(

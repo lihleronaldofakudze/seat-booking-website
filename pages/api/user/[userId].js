@@ -1,8 +1,5 @@
 import nc from "next-connect";
-import { getUser, deleteUser, updateUser } from "../../../controller/user/user";
-
-// const handler = nc();
-// handler.get(getAllUsers);
+import { getUser, deleteUser, updateUser } from "../../../controller/user";
 
 const handler = nc();
 handler.get(getUser);
