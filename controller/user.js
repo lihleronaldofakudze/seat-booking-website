@@ -5,7 +5,7 @@ const addUser = async (req, res) => {
     "INSERT INTO users (username, email, password) VALUES (?, ?, ?)",
     [req.body.username, req.body.email, req.body.password]
   );
-  res.send({ message: "Successfully deleted" });
+  res.send({ result: true });
 };
 
 const getAllUsers = async (req, res) => {
@@ -29,7 +29,7 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   await executeQuery("DELETE FROM users WHERE id = ?", [req.query.userId]);
-  res.send({ message: "Successfully deleted" });
+  res.send({ result: true });
 };
 
 export { getAllUsers, deleteUser, getUser, addUser, updateUser };

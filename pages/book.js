@@ -22,7 +22,9 @@ const book = ({ a, b, c, d }) => {
         is_booked: true,
       }),
     }).then((response) => {
-      alert("generated qr code");
+      alert(
+        `Generated QrCode for =\n ID: ${id} \nSEAT: ${seat} \nSECTION: ${section} \nBOOKED: yes`
+      );
       setQr(`ID: ${id} \nSEAT: ${seat} \nSECTION: ${section} \nBOOKED: yes`);
     });
   };
@@ -60,7 +62,7 @@ const book = ({ a, b, c, d }) => {
                       seat.is_booked === 1 ? "bg-red-900" : "bg-blue-900"
                     } cursor-pointer`}
                     key={seat.id}
-                    onClick={() => bookASeat(seat.id, seat.section, seat)}
+                    onClick={() => bookASeat(seat.id, seat.section, seat.seat)}
                     disabled={seat.is_booked ? true : false}
                   >
                     {seat.seat}
@@ -80,7 +82,7 @@ const book = ({ a, b, c, d }) => {
                       seat.is_booked === 1 ? "bg-red-900" : "bg-blue-900"
                     } cursor-pointer`}
                     key={seat.id}
-                    onClick={() => bookASeat(seat.id, seat.section, seat)}
+                    onClick={() => bookASeat(seat.id, seat.section, seat.seat)}
                     disabled={seat.is_booked ? true : false}
                   >
                     {seat.seat}
@@ -99,7 +101,7 @@ const book = ({ a, b, c, d }) => {
                     seat.is_booked === 1 ? "bg-red-900" : "bg-blue-900"
                   } cursor-pointer`}
                   key={seat.id}
-                  onClick={() => bookASeat(seat.id, seat.section, seat)}
+                  onClick={() => bookASeat(seat.id, seat.section, seat.seat)}
                   disabled={seat.is_booked ? true : false}
                 >
                   {seat.seat}

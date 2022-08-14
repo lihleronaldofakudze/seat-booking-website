@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "mysql": "^2.18.1",
     "next": "12.2.4",
     "next-connect": "^0.13.0",
